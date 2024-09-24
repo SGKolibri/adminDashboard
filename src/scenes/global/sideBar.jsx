@@ -112,7 +112,7 @@ const Sidebar = () => {
                   <Typography variant='h2' color={colors.grey[100]} fontWeight={700}
                     sx={{ m: "10px 0 0 0" }}
                   >
-                    TJ Instalações
+                    Admin
                   </Typography>
                   <Typography variant='h5' color={colors.greenAccent[500]} >Admin</Typography>
                 </Box>

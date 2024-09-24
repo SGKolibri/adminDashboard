@@ -1,6 +1,6 @@
 import { Box, useTheme, Typography } from "@mui/material"
 import { DataGrid } from "@mui/x-data-grid";
-// import {  GridToolbar } from "@mui/x-data-grid";
+import { GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme"
 import { mockDataInvoices } from '../../data/mockData'
 import Header from "../../components/Header"
@@ -32,8 +32,10 @@ export default function Invoices() {
             headerName: 'Cost',
             flex: 1,
             renderCell: (params) => (
-                <Typography color={colors.greenAccent[500]}>
-                    ${params.row.cost}
+                <Typography height={'100%'} display={"flex"} color={colors.greenAccent[500]}>
+                    <span className="flex items-center">
+                        ${params.row.cost}
+                    </span>
                 </Typography>
             )
         },
@@ -81,6 +83,9 @@ export default function Invoices() {
                     // checkboxSelection (selected items)
                     rows={mockDataInvoices}
                     columns={columns}
+                    slots={{
+                        toolbar: GridToolbar,
+                    }}
                 />
             </Box>
         </Box >
